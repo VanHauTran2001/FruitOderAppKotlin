@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="signinViewModel"
+            type="com.cuongpq.basemvvm.ui.main.fragment.signin.SigninViewModel" />
+        <import type="android.view.View"/>
+    </data>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        tools:viewBindingIgnore="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp"
+        android:id="@+id/linearLayout"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="15dp"
+                android:hint="Email"
+                android:inputType="text"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="15dp"
+                android:textColor="@color/black"
+                android:background="@drawable/custom_edittext"
+                android:hint="Password"
+                android:layout_below="@id/edtEmail"
+                android:padding="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/tvErrorSignin"
+                android:textColor="@color/blue"
+                android:layout_below="@+id/edtPassword"
+                android:gravity="center"
+                android:layout_height="18dp"/>
+
+            <ImageView
+                android:id="@+id/imgCheckPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edtPassword"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="29dp"
+                android:onClick="@{()->signinViewModel.onClickVisible()}"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_baseline_visibility_24" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/check_Pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:buttonTint="#FF6500"
+                android:text="Remember"
+                android:textColor="#FF6500"
+                android:textSize="18dp" />
+        </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/custom_btn_slat"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:id="@+id/btnLogin"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:onClick="@{()->signinViewModel.performSignIn()}"
+            android:textColor="@color/white"
+            android:textSize="23dp" />
+    </LinearLayout>
+</layout>

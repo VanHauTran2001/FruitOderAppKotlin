@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="profileViewModel"
+            type="com.cuongpq.basemvvm.ui.main.fragment.profile.ProfileViewModel" />
+        <import type="android.view.View"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAvata"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:onClick="@{()->profileViewModel.onClickAvata()}"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/avatar" />
+
+                <ImageView
+                    android:id="@+id/imgSave"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignTop="@+id/imgAvata"
+                    android:layout_alignEnd="@+id/imgAvata"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginEnd="-137dp"
+                    android:layout_toEndOf="@+id/imgAvata"
+                    android:onClick="@{()->profileViewModel.onUpdate()}"
+                    android:src="@drawable/save" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/txtEmailAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="ACCOUNT"
+                    android:textSize="17dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#BDB7B7" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Account information"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Password and security"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Privacy"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Servicce"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="PERSONAL INFORMATION"
+                    android:textSize="17dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#BDB7B7" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="My information"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Relationship"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Account information"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Place"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:id="@+id/linearLogout"
+                android:onClick="@{()->profileViewModel.onLogout()}"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_btn_slat"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_power_settings_new_24" />
+                <TextView
+                    android:id="@+id/txtLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "649811192517",
+    "project_id": "fruitoderapp",
+    "storage_bucket": "fruitoderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649811192517:android:6ec873f0888f94b1bf9eac",
+        "android_client_info": {
+          "package_name": "com.cuongpq.basemvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649811192517-su32o4ggpi72i6luc3q41tl100iuellm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYUkyKYBxU9EQO-O4SIM1BM5zBHgja8OQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649811192517-su32o4ggpi72i6luc3q41tl100iuellm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

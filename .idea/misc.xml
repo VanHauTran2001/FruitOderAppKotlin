@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable-xxxhdpi/backfroup_login.xml" value="0.1795" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_adapter_cart.xml" value="0.1735" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_backgrond.xml" value="0.1795" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_btn_buy.xml" value="0.1735" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_btn_slat.xml" value="0.139" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_cart.xml" value="0.1735" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_edittext.xml" value="0.152" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_relative.xml" value="0.173" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1735" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/ic_carts.xml" value="0.1735" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/ic_search.xml" value="0.173" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/search_bg.xml" value="0.173" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_slash.xml" value="0.1" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/dialog_confirm.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_favorite.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_signin.xml" value="0.2366412213740458" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/fragment_user.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/iteam_swipe.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_banner.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_discounted.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_recently.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_swipe.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_user.xml" value="0.22826086956521738" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/menu/item_menu_botomnavigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Project/BaseMVVM/app/src/main/res/layout/activity_main.xml" value="0.17604166666666668" />
+        <entry key="..\:/Project/BaseMVVM/app/src/main/res/layout/dialog_confirm.xml" value="0.2" />
+        <entry key="..\:/Project/BaseMVVM/app/src/main/res/layout/fragment_file.xml" value="0.17604166666666668" />
+        <entry key="..\:/Project/BaseMVVM/app/src/main/res/layout/fragment_user.xml" value="0.1796875" />
+        <entry key="..\:/Project/BaseMVVM/app/src/main/res/layout/item_user.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
