@@ -60,7 +60,7 @@ class ProfileFragment : BaseMvvmFragment<ProfileCallBack, ProfileViewModel>(), P
         firebaseUser.updateProfile(profileChangeRequest)
             .addOnCompleteListener { task: Task<Void?> ->
                 if (task.isSuccessful) {
-                    getBindingData().imgAvata.visibility = View.GONE
+                    getBindingData().imgSave.visibility = View.GONE
                     Toast.makeText(context, "Upload avata onsuccessfull", Toast.LENGTH_SHORT)
                         .show()
                     Glide.with(context!!).load(firebaseUser.photoUrl)

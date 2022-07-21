@@ -1,5 +1,6 @@
 package com.cuongpq.basemvvm.ui.main.activity.cart
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ RecyclerView.Adapter<CartAdapter.Companion.CartViewHolder>(){
         fun getCount():Int
         fun getDataCart(position:Int):Cart
         fun getContext() : Context
+        fun getDeleteItem(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
@@ -24,12 +26,17 @@ RecyclerView.Adapter<CartAdapter.Companion.CartViewHolder>(){
         return CartViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val carts = interCar.getDataCart(position)
         holder.binding.txtNameCart.text = carts.getNameSP()
-        holder.binding.txtPriceCart.text = "$ " + carts.getPriceSP()
+        holder.binding.txtNumberItem.text = "X"+carts.getNumber()
+        holder.binding.txtPriceCart.text = "$ " + (carts.getPriceSP()!! * carts.getNumber()!!)
         holder.binding.txtUnitCart.text = ""+carts.getUnitSP()+ "KG"
         Glide.with(interCar.getContext()).load(carts.getImageSP()).into(holder.binding.imgSpCart)
+        holder.binding.btnDelete.setOnClickListener {
+            interCar.getDeleteItem(position)
+        }
     }
 
     override fun getItemCount(): Int {

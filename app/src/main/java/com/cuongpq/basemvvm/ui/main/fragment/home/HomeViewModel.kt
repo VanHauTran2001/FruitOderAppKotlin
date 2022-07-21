@@ -25,7 +25,9 @@ class HomeViewModel @Inject constructor(
     private var compositeDisposable = CompositeDisposable()
     private var apiDiscount :APIService?=null
 
+    companion object{
 
+    }
     init {
         apiDiscount = RetrofitClient.instance.create(APIService::class.java)
         getDataDiscounted()
@@ -58,12 +60,8 @@ class HomeViewModel @Inject constructor(
     }
 
 
-    companion object{
 
-    }
-    init {
 
-    }
 }
 
 

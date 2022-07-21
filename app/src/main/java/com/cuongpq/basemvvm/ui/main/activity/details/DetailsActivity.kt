@@ -1,21 +1,21 @@
 package com.cuongpq.basemvvm.ui.main.activity.details
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.cuongpq.basemvvm.R
 import com.cuongpq.basemvvm.data.model.Recently
-import com.cuongpq.basemvvm.data.sqlite.SQLiteHelper
 import com.cuongpq.basemvvm.databinding.ActivityDetailsBinding
 import com.cuongpq.basemvvm.ui.base.activity.BaseMVVMActivity
 import com.cuongpq.basemvvm.ui.base.viewmodel.BaseViewModel
 import com.cuongpq.basemvvm.ui.main.activity.cart.CartActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.cuongpq.basemvvm.ui.utils.Utils
 
 
 class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),DetailsCallBack{
     private var recently : Recently ?=null
+    private var check : Boolean ?=null
     override fun error(id: String, error: Throwable) {
         showMessage(error.message!!)
     }
@@ -33,10 +33,15 @@ class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),Deta
                 BaseViewModel.FINISH_ACTIVITY -> finish()
                 DetailsViewModel.CLICK_BACK ->onClickBack()
                 DetailsViewModel.CLICK_BUY -> onClickBuyItem()
+                DetailsViewModel.CLICK_ADD_CART -> onClickAddCart()
+                DetailsViewModel.CLICK_IMG_CART -> onClickImgCart()
             }
         }
         initData()
-        onClickAddCart()
+    }
+
+    private fun onClickImgCart() {
+        startActivity(Intent(this,CartActivity::class.java))
     }
 
     private fun onClickBuyItem() {
@@ -47,13 +52,20 @@ class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),Deta
         val image = recently!!.getImage()
         mModel.idSP = id!!
         mModel.nameSP = name!!
-        mModel.priceSP = price!!
         mModel.unitSP = unit!!
         mModel.imageSP = image!!
-        mModel.clickBuy(applicationContext)
+        mModel.number = 1
+        mModel.priceSP = price!!
+        mModel.clickBuy()
+        var total =0
+        for (i in Utils.listCar!!.indices) {
+            total += Utils.listCar!![i].getNumber()!!
+        }
+        getBindingData().txtNumberDetails.text = total.toString()
         startActivity(Intent(this,CartActivity::class.java))
     }
 
+    @SuppressLint("SetTextI18n")
     private fun onClickAddCart() {
         val id = recently!!.getID()
         val name = recently!!.getName()
@@ -62,21 +74,24 @@ class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),Deta
         val image = recently!!.getImage()
         mModel.idSP = id!!
         mModel.nameSP = name!!
-        mModel.priceSP = price!!
         mModel.unitSP = unit!!
         mModel.imageSP = image!!
-        getBindingData().btnAddCart.setOnClickListener {
-            if (recently != null) {
-                mModel.addToCart(applicationContext)
-            }
+        mModel.number = 1
+        mModel.priceSP = price!!
+        mModel.addToCart()
+        var total =0
+        for (i in Utils.listCar!!.indices) {
+            total += Utils.listCar!![i].getNumber()!!
         }
-
+        getBindingData().txtNumberDetails.text = total.toString()
+        showMessage("Add cart successfull")
     }
 
 
     private fun onClickBack() {
         finish()
     }
+    @SuppressLint("SetTextI18n")
     private fun initData() {
         recently = intent.getSerializableExtra("details") as Recently?
         getBindingData().txtNameDetails.text = recently!!.getName()
@@ -84,6 +99,15 @@ class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),Deta
         getBindingData().txtPriceDetails.text = "$" +recently!!.getPrice()
         getBindingData().txtUnitDetails.text = ""+recently!!.getUnit()+" KG"
         Glide.with(applicationContext).load(recently!!.getImage()).into(getBindingData().imgDetails)
+
+        if (Utils.listCar !=null){
+            var total =0
+            for (i in Utils.listCar!!.indices) {
+                total += Utils.listCar!![i].getNumber()!!
+            }
+            getBindingData().txtNumberDetails.text = total.toString()
+        }
+
 
     }
 
@@ -93,4 +117,12 @@ class DetailsActivity :BaseMVVMActivity<DetailsCallBack,DetailsViewModel>(),Deta
        return DetailsViewModel::class.java
     }
 
+//    override fun onResumeControl() {
+//        super.onResumeControl()
+//        var total =0
+//        for (i in Utils.listCar!!.indices) {
+//            total += Utils.listCar!![i].getNumber()!!
+//        }
+//        getBindingData().txtNumberDetails.text = total.toString()
+//    }
 }

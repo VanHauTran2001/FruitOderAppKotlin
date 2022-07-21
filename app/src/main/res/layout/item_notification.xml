@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="notifications"
+            type="com.cuongpq.basemvvm.data.model.Notifi" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_adapter_cart">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_notifications_24"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtTB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/btnDeleteTB"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Bạn vừa đặt đơn hàng có giá trị  1000$ . Cảm ơn bạn đã tin tưởng"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <ImageView
+                android:id="@+id/btnDeleteTB"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_clear_24" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:40:20"
+                android:layout_below="@id/txtTB"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="18dp"
+                android:id="@+id/txtHour"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTB"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/txtDay"
+                android:text="19/07/2022"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

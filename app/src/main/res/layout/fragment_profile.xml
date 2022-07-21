@@ -32,9 +32,9 @@
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/imgAvata"
                     android:layout_alignEnd="@+id/imgAvata"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="-2dp"
-                    android:layout_marginEnd="-137dp"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginEnd="-120dp"
                     android:layout_toEndOf="@+id/imgAvata"
                     android:onClick="@{()->profileViewModel.onUpdate()}"
                     android:src="@drawable/save" />

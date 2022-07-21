@@ -10,9 +10,11 @@ import com.cuongpq.basemvvm.databinding.ItemSearchBinding
 
 class SearchAdapter(private val interSearch : ISearch)
     :RecyclerView.Adapter<SearchAdapter.Companion.SearchViewHolder>(){
-
     companion object{
         class SearchViewHolder(val binding : ItemSearchBinding):RecyclerView.ViewHolder(binding.root)
+    }
+    init {
+
     }
     interface ISearch{
         fun getCountSeachr():Int

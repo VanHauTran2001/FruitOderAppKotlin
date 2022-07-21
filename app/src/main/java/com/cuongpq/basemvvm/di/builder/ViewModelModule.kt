@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.cuongpq.basemvvm.di.model.ViewModelFactory
 import com.cuongpq.basemvvm.di.model.ViewModelKey
 import com.cuongpq.basemvvm.ui.main.MainViewModel
+import com.cuongpq.basemvvm.ui.main.activity.card.stripe.CardViewModel
 import com.cuongpq.basemvvm.ui.main.activity.cart.CartViewModel
 import com.cuongpq.basemvvm.ui.main.activity.details.DetailsViewModel
 import com.cuongpq.basemvvm.ui.main.activity.login.LoginViewModel
@@ -51,6 +52,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CartViewModel::class)
     abstract fun bindsCartViewModel(cartViewModel: CartViewModel):ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CardViewModel::class)
+    abstract fun bindsCardViewModel(cardViewModel: CardViewModel):ViewModel
 
     @Binds
     @IntoMap

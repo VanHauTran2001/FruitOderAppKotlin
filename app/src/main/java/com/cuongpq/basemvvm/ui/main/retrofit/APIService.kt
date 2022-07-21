@@ -16,5 +16,6 @@ interface APIService {
     @get:GET("recently.php")
     val getRecently:Observable<List<Recently>>
     @POST("search.php")
+    @FormUrlEncoded
     fun getSearch(@Field("tukhoa") tukhoa: String?): Observable<List<Recently>>
 }

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable-mdpi/ic_credit_card.xml" value="0.1" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable-xxxhdpi/backfroup_login.xml" value="0.1795" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_adapter_cart.xml" value="0.1735" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/custom_backgrond.xml" value="0.1795" />
@@ -15,6 +16,7 @@
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/ic_carts.xml" value="0.1735" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/ic_search.xml" value="0.173" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/drawable/search_bg.xml" value="0.173" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_card.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_cart.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_details.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
@@ -34,6 +36,7 @@
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_cart.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_discounted.xml" value="0.25416666666666665" />
+        <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_notification.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_recently.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_search.xml" value="0.25416666666666665" />
         <entry key="..\:/ANDROID_KOTLIN/basemvvm-main/BaseMVVM/app/src/main/res/layout/item_swipe.xml" value="0.25416666666666665" />

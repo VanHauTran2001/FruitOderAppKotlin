@@ -75,6 +75,7 @@
                 android:textAllCaps="false"
                 android:gravity="center"
                 android:textSize="23dp"
+                android:onClick="@{()->cartViewModel.onPay()}"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_btn_buy"
                 android:layout_marginLeft="15dp"

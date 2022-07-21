@@ -7,6 +7,7 @@ import android.net.ConnectivityManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.cuongpq.basemvvm.R
@@ -20,6 +21,7 @@ import com.cuongpq.basemvvm.ui.main.activity.details.DetailsActivity
 import com.cuongpq.basemvvm.ui.main.fragment.home.category.CategoryAdapter
 import com.cuongpq.basemvvm.ui.main.fragment.home.discounted.DiscountedAdapter
 import com.cuongpq.basemvvm.ui.main.fragment.home.recently.RecentlyAdapter
+import com.cuongpq.basemvvm.ui.main.fragment.search.SearchFragment
 import java.lang.ref.WeakReference
 
 
@@ -40,12 +42,13 @@ class HomeFragment : BaseMvvmFragment<HomeCallBack, HomeViewModel>(), HomeCallBa
         onShowDataDiscount()
         onShowDataCategory()
         onShowDataRecently()
-        mModel.uiEventLiveData.observe(this){
-            when(it){
+        mModel.uiEventLiveData.observe(this) {
+            when (it) {
                 BaseViewModel.FINISH_ACTIVITY -> finishActivity()
             }
         }
     }
+
 
     @SuppressLint("WrongConstant")
     private fun onShowDataRecently() {

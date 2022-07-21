@@ -2,14 +2,11 @@ package com.cuongpq.basemvvm.ui.main.fragment.signup
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 import com.cuongpq.basemvvm.R
 import com.cuongpq.basemvvm.databinding.FragmentSignupBinding
 import com.cuongpq.basemvvm.ui.base.fragment.BaseMvvmFragment
 import com.cuongpq.basemvvm.ui.base.viewmodel.BaseViewModel
-import com.cuongpq.basemvvm.ui.main.MainActivity
 import com.cuongpq.basemvvm.ui.main.activity.login.LoginActivity
 
 class SignupFragment : BaseMvvmFragment<SignupCallBack,SignupViewModel>(),SignupCallBack{

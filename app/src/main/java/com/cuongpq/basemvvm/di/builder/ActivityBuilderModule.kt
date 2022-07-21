@@ -1,6 +1,7 @@
 package com.cuongpq.basemvvm.di.builder
 
 import com.cuongpq.basemvvm.ui.main.MainActivity
+import com.cuongpq.basemvvm.ui.main.activity.card.stripe.CardActivity
 import com.cuongpq.basemvvm.ui.main.activity.cart.CartActivity
 import com.cuongpq.basemvvm.ui.main.activity.details.DetailsActivity
 import com.cuongpq.basemvvm.ui.main.activity.login.LoginActivity
@@ -25,4 +26,6 @@ abstract class ActivityBuilderModule {
     abstract fun contributeDetailsActivity() : DetailsActivity
     @ContributesAndroidInjector
     abstract fun contributeCartActivity() : CartActivity
+    @ContributesAndroidInjector
+    abstract fun contribueteCardActivity() : CardActivity
 }

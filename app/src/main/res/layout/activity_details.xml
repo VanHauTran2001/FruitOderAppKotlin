@@ -16,33 +16,61 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:id="@+id/ln_actionbar"
-                android:background="#FF6500"
-                android:orientation="horizontal">
+                android:background="#FF6500">
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:id="@+id/btn_back"
-                    android:layout_gravity="center"
+                    android:layout_centerVertical="true"
                     android:onClick="@{()->detailsViewModel.onClickBack()}"
                     android:scaleType="centerInside"
                     android:src="@drawable/ic_back"
                     android:tint="@color/white"
                     android:padding="10dp"/>
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Product Details"
                     android:textStyle="bold"
                     android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:textSize="20dp"
-                    android:gravity="center_horizontal"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
+                    android:layout_toRightOf="@id/btn_back"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/imgCartDetails"
+                    android:layout_width="53dp"
+                    android:layout_height="55dp"
+                    android:onClick="@{()->detailsViewModel.onClickImg()}"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/cart" />
+                <RelativeLayout
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_relative">
+
+                    <TextView
+                        android:id="@+id/txtNumberDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -106,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_cart"
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/btnAddCart"
+                    android:onClick="@{()->detailsViewModel.onClickAdd()}"
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_width="40dp"
@@ -130,9 +158,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="30dp"
                     android:background="@drawable/custom_btn_buy"
+                    android:onClick="@{()->detailsViewModel.onClickBuy()}"
                     android:padding="10dp"
                     android:text="BUY NOW"
-                    android:onClick="@{()->detailsViewModel.onClickBuy()}"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     android:textStyle="bold" />

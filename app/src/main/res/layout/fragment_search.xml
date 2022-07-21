@@ -9,20 +9,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <EditText
+            android:id="@+id/edtSeachItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:hint="Enter the product you want to search for....."
-            android:id="@+id/edtSeachItem"
-            android:textSize="18dp"/>
+            android:textSize="18dp" />
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylerSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/edtSeachItem"
-            android:layout_margin="5dp"
-            android:id="@+id/recylerSearch"/>
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp" />
     </RelativeLayout>
 </layout>

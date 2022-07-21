@@ -1,6 +1,6 @@
 package com.cuongpq.basemvvm.ui.main.fragment.search
 
-import androidx.lifecycle.MutableLiveData
+
 import com.cuongpq.basemvvm.data.local.AppDatabase
 import com.cuongpq.basemvvm.data.model.Recently
 import com.cuongpq.basemvvm.data.remote.InteractCommon
@@ -18,19 +18,26 @@ class SearchViewModel @Inject constructor(
     interactCommon: InteractCommon,
     scheduler: Executor
 ) : BaseViewModel<SearchCallBack>(appDatabase,interactCommon,scheduler){
-    var obListSearch = MutableLiveData<MutableList<Recently>>()
+    var obListSearch :ArrayList<Recently> = ArrayList()
     private var compositeDisposable = CompositeDisposable()
     private var apiDiscount : APIService?=null
+
     init {
        apiDiscount = RetrofitClient.instance.create(APIService::class.java)
     }
 
-    fun getDataSearch(edtSearch:String) {
-        compositeDisposable!!.addAll(apiDiscount!!.getSearch(edtSearch)
+    fun getDataSearch(keySearch : String) {
+        obListSearch.clear()
+        compositeDisposable!!.add(apiDiscount!!.getSearch(keySearch)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                obListSearch.value = it as MutableList<Recently>
+                obListSearch = it as ArrayList<Recently>
             })
+    }
+
+    override fun onCleared() {
+        compositeDisposable.clear()
+        super.onCleared()
     }
 }

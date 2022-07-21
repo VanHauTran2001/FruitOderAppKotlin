@@ -4,7 +4,8 @@ class Cart(private var idSP : Int =0,
            private var nameSP : String=" ",
            private var priceSP :Int=0,
            private var unitSP : Int=0,
-           private var imageSP:String=""){
+           private var imageSP:String="",
+           private var number : Int = 0){
     fun getIdSP():Int?{
         return idSP
     }
@@ -34,5 +35,11 @@ class Cart(private var idSP : Int =0,
     }
     fun setImageSP(imageSP: String){
         this.imageSP = imageSP
+    }
+    fun getNumber():Int?{
+        return number
+    }
+    fun setNumber(number: Int){
+        this.number = number
     }
 }

@@ -32,18 +32,27 @@ class SearchFragment : BaseMvvmFragment<SearchCallBack, SearchViewModel>(), Sear
                 BaseViewModel.FINISH_ACTIVITY ->finishActivity()
             }
         }
+        onClickSearch()
+        onShowDataSearch()
+    }
+
+    private fun onClickSearch() {
         getBindingData().edtSeachItem.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
+                if (p0!!.isEmpty()){
+                    mModel.obListSearch.clear()
+                    onShowDataSearch()
+                }else{
+                    mModel.getDataSearch(getBindingData().edtSeachItem.text.toString().trim())
+                }
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                mModel.getDataSearch(getBindingData().edtSeachItem.text.toString())
-                onShowDataSearch()
+
             }
 
         })
@@ -51,16 +60,14 @@ class SearchFragment : BaseMvvmFragment<SearchCallBack, SearchViewModel>(), Sear
 
     @SuppressLint("WrongConstant")
     private fun onShowDataSearch() {
-        mModel.callBack = WeakReference(this)
-        mModel.obListSearch.observe(this){
             if (getBindingData().recylerSearch.adapter==null){
                 val linearLayoutManager = LinearLayoutManager.VERTICAL
                 getBindingData().recylerSearch.layoutManager =  LinearLayoutManager(activity,linearLayoutManager,false)
-                getBindingData().recylerSearch.adapter = SearchAdapter(this@SearchFragment)
+                    getBindingData().recylerSearch.adapter = SearchAdapter(this@SearchFragment)
             }else{
                 getBindingData().recylerSearch.adapter!!.notifyDataSetChanged()
             }
-        }
+
     }
 
 
@@ -71,14 +78,14 @@ class SearchFragment : BaseMvvmFragment<SearchCallBack, SearchViewModel>(), Sear
     }
 
     override fun getCountSeachr(): Int {
-        if (mModel.obListSearch.value==null){
+        if (mModel.obListSearch==null){
             return 0
         }
-        return mModel.obListSearch.value!!.size
+        return mModel.obListSearch.size
     }
 
     override fun getDataSearch(position: Int): Recently {
-        return mModel.obListSearch.value!![position]
+        return mModel.obListSearch!![position]
     }
 
     @SuppressLint("UseRequireInsteadOfGet")
@@ -86,10 +93,12 @@ class SearchFragment : BaseMvvmFragment<SearchCallBack, SearchViewModel>(), Sear
         return context!!
     }
 
+
     override fun onClickItemSearch(position: Int) {
         val intent = Intent(context, DetailsActivity::class.java)
-        intent.putExtra("details", mModel.obListSearch.value!![position])
+        intent.putExtra("details", mModel.obListSearch!![position])
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context?.startActivity(intent)
     }
+
 }

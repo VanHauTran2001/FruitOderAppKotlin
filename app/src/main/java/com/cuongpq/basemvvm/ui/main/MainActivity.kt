@@ -12,6 +12,7 @@ import com.cuongpq.basemvvm.ui.main.fragment.search.SearchFragment
 import com.cuongpq.basemvvm.ui.main.fragment.home.HomeFragment
 import com.cuongpq.basemvvm.ui.main.fragment.notification.NotificationFragment
 import com.cuongpq.basemvvm.ui.main.fragment.profile.ProfileFragment
+import com.cuongpq.basemvvm.ui.utils.Utils
 
 class MainActivity : BaseMVVMActivity<MainCallBack, MainViewModel>(), MainCallBack {
     private var sqliteHelper : SQLiteHelper?=null
@@ -26,12 +27,21 @@ class MainActivity : BaseMVVMActivity<MainCallBack, MainViewModel>(), MainCallBa
         getBindingData().txtTitle.text = "Home"
         onClickMenuItem()
         createTableSQLite()
-        setNumberCart()
         mModel.uiEventLiveData.observe(this){
             when(it){
                 BaseViewModel.FINISH_ACTIVITY -> finish()
                 MainViewModel.CLICK_IMG_CART -> onClickToCart()
             }
+        }
+
+        if (Utils.listCar!=null) {
+            var total =0
+            for (i in Utils.listCar!!.indices) {
+                total += Utils.listCar!![i].getNumber()!!
+            }
+            getBindingData().txtNumberItem.text = total.toString()
+        }else{
+            Utils.listCar = ArrayList()
         }
     }
 
@@ -39,19 +49,24 @@ class MainActivity : BaseMVVMActivity<MainCallBack, MainViewModel>(), MainCallBa
         startActivity(Intent(applicationContext,CartActivity::class.java))
     }
 
-    private fun setNumberCart() {
-//        getBindingData().txtNumber.text =""+Utils.NUMBER
-    }
+
 
     private fun createTableSQLite() {
         sqliteHelper = SQLiteHelper(this,"Fruit.DB",null,1)
-        sqliteHelper!!.QueryData("CREATE TABLE IF NOT EXISTS Cart(Id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+        sqliteHelper!!.QueryData("CREATE TABLE IF NOT EXISTS Cart1(Id INTEGER PRIMARY KEY AUTOINCREMENT,"+
         "IdAccount VARCHAR(20)," +
         "IdSP INTEGER," +
         "NameSP NVARCHAR(100)," +
         "PriceSP INTEGER,"+
         "UnitSP INTEGER,"+
-        "ImageSP VARCHAR(100))")
+        "ImageSP VARCHAR(100),"+
+        "Number INTEGER)")
+
+        sqliteHelper!!.QueryData("CREATE TABLE IF NOT EXISTS Notification(IdTB INTEGER PRIMARY KEY AUTOINCREMENT," +
+        "IdAccount VARCHAR(20)," +
+        "TEXT_TB NVARCHAR(100),"+
+        "HOUR VARCHAR(20),"+
+        "DAY VARCHAR(20))")
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -96,4 +111,12 @@ class MainActivity : BaseMVVMActivity<MainCallBack, MainViewModel>(), MainCallBa
 
     override fun getBindingData() = mBinding as ActivityMainBinding
 
+    override fun onResumeControl() {
+        super.onResumeControl()
+        var total =0
+        for (i in Utils.listCar!!.indices) {
+            total += Utils.listCar!![i].getNumber()!!
+        }
+        getBindingData().txtNumberItem.text = total.toString()
+    }
 }
